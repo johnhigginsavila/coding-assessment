@@ -1,0 +1,6 @@
+{
+  "STUDENT_STATUS": {
+	"ACTIVE": "active",
+	"SUSPENDED": "suspended"
+  }
+}

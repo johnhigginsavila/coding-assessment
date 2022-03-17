@@ -1,0 +1,7 @@
+{
+  "ignore": ["public/docs/*"],
+  "events": {
+    "restart": "npm run update:docs"
+  },
+  "delay": 200
+}

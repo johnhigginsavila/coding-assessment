@@ -1,0 +1,6 @@
+{
+  "id": "backend-coding-test",
+  "append": true,
+  "watch": false,
+  "script": "index.js"
+}

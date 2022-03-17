@@ -1,0 +1,67 @@
+{
+  "name": "full-stack-coding-assignment-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "init": "npm install && npm i --save sqlite3 && mkdir data && npm run migrate:ups && npm run seed:ups",
+    "pretest": "NODE_ENV=test npm run migrate:ups",
+    "test": "nyc mocha tests --recursive",
+    "start": "node index.js",
+    "nodemon": "NODE_ENV=development nodemon --trace-warnings index.js -e js,css,json",
+    "update:docs": "apidoc -i ./api/ -o ./public/docs/api/",
+    "migrate:ups": "npx sequelize-cli db:migrate",
+    "migrate:down": "npx sequelize-cli db:migrate:undo",
+    "migrate:downs": "npx sequelize-cli db:migrate:undo:all",
+    "seed:ups": "npx sequelize-cli db:seed:all",
+    "seed:down": "npx sequelize-cli db:seed:undo",
+    "seed:downs": "npx sequelize-cli db:seed:undo:all",
+    "apidoc": "apidoc -i ./server/routes/ -o ./public/docs/api/"
+  },
+  "keywords": [],
+  "author": "Mervin Tan",
+  "license": "ISC",
+  "dependencies": {
+    "apidoc": "^0.20.1",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "child-process-promise": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-rate-limit": "^5.1.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.6",
+    "sequelize-cli": "^5.5.1",
+    "sinon": "^13.0.1",
+    "sqlite3": "^4.2.0",
+    "umzug": "^2.3.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "forever": "^2.0.0",
+    "mocha": "^6.1.4",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2"
+  },
+  "apidoc": {
+    "name": "Pave Full Stack Coding Assignment",
+    "version": "1.0.0",
+    "description": "This is an API documentation for Pave Full Stack Coding Assignment.",
+    "title": "Pave Full Stack Coding Assignment",
+    "url": "http://localhost:8010"
+  },
+  "pre-push": []
+}
