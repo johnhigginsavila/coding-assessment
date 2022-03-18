@@ -10,6 +10,7 @@ To run this application you need to install docker in you system
 Just run docker-componse up --build
 
 Frontend can be accessed at http://localhost:3000
+
 Backend can be accessed at http://localhost:8010
 
 ## For Improvements
